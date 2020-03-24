@@ -1,0 +1,51 @@
+.row {
+		margin: 0;
+		padding: 0;
+}
+
+ul.options {
+		list-style: none outside none;
+}
+
+ul.options label {
+		display: block;
+}
+
+ul.options label span {
+		display: inline-block;
+		font-size: 90%;
+		width: 120px;
+}
+ul.options input {
+	width: 30%;
+}
+ul.options li {
+		width: 24%;
+}
+
+ul.options button {
+	display:block;
+}
+
+.row > * {
+		display: inline-block;
+}
+
+h3 {
+	margin:0.4em 0;
+	font-size:100%;
+}
+
+#infection {
+		border:1px solid #000;
+		margin-top:0.7em;
+}
+
+.stats ul {
+		list-style: none outside none;
+}
+
+.stats ul li {
+		display: inline-block;
+		width: 120px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Infection</title>
+    <link rel="stylesheet" href="css/infection.css">
+  </head>
+
+  <body>
+		<h1>Infection</h1>
+    <div id="infection-wrapper" class="infwrap">
+				<ul class="options row">
+						<li>
+								<h3>Population</h3>
+								<label for="population"><span>Population:</span> <input type="text" id="population" value="100" /></label>
+								<label for="infected"><span>Infected (%):</span> <input type="text" id="infected" value="20" /></label>
+								<label for="speed" ><span>Speed:</span> <select id="speed"><option value="1" >Slow</option><option value="2" >Medium</option><option value="3" >Fast</option></select></label>
+						</li>
+						<li>
+								<h3>Properties</h3>
+								<label for="incubation"><span>Incubation (days):</span> <input type="text" id="incubation" value="14" /></label>
+								<label for="transmission"><span>Transmission (%):</span> <input type="text" id="transmission" value="20" /></label>
+								<label for="viralload" ><span>Viral load (%):</span> <input type="text" id="viralload" value="50" /></label>
+								<label for="death" ><span>Death (prob%):</span> <input type="text" id="death" value="4" /></label>
+								<label for="heal" ><span>Heal (days):</span> <input type="text" id="heal" value="10" /></label>
+						</li>
+						<li>
+								<h3>Contention</h3>
+								<label for="stopped"><span>Stopped pop (%):</span> <input type="text" id="stopped" value="10" /></label>
+						</li>
+						<li>
+								<h3>Simulate</h3>
+								<button id="generatepop">Generate population</button>
+								<button id="play">Play</button>
+								<button id="pause">Pause</button>
+						</li>
+				</ul>
+		</div>
+		<canvas id="infection"></canvas>
+		<div class="stats">
+				<ul>
+						<li>Time: <span id="sTime"></span></li>
+						<li>Population: <span id="sPopulation"></span></li>
+						<li>Healthy: <span id="sHealthy"></span></li>
+						<li>Infected: <span id="sInfected"></span></li>
+						<li>Incubating: <span id="sIncubating"></span></li>
+						<li>Healed: <span id="sHealed"></span></li>
+						<li>Deceased: <span id="sDead"></span></li>
+				</ul>
+		</div>
+		</div>
+    <script src="js/infection.js"></script>
+  </body>
+</html>
