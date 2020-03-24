@@ -1,3 +1,4 @@
+// Inspired by https://www.washingtonpost.com/graphics/2020/world/corona-simulator/
 !function(Util) {
 		class Simulator {
 				constructor(data) {
@@ -138,6 +139,8 @@
 						ball2.infect(ball1, this.data.viralLoadIncrease, this.data.transmission);
 				}
 
+				// Formulas come from a physics page searching: https://www.google.com/search?q=2d+collision+formula&client=ubuntu&hs=bGY&sxsrf=ALeKk02tGJ2NcwfMDF3aLbcKware-lcp4g:1585079533268&tbm=isch&source=iu&ictx=1&fir=Vmd5u9g87LQaVM%253A%252CVsrmVL4emaSWJM%252C_&vet=1&usg=AI4_-kSxCD8MZwS18DUBUa1K_UCiDqFyFw&sa=X&ved=2ahUKEwi3oZW08bPoAhUh2-AKHSnPAYAQ9QEwEnoECAYQHg#imgrc=hVFs8ECjhWEtYM
+				// and https://github.com/miskimit/miskimit.github.io
 				computeCollision(ball1, ball2) {
 						let theta1 = ball1.angle();
 						let theta2 = ball2.angle();
