@@ -99,9 +99,8 @@
 						}
 				}
 
-				staticCollision(ob1, ob2, emergency=false)
+				overlapCollision(ob1, ob2)
 				{
-
 						let overlap = ob1.radius + ob2.radius - Math.sqrt((ob1.x+ob1.dx - ob2.x-ob2.dx)**2 + (ob1.y+ob1.dy - ob2.y-ob2.dy)**2);
 						if (overlap>0) {
 								ob1.x+=ob1.dx/overlap;
@@ -110,28 +109,6 @@
 								ob2.y+=ob2.dy/overlap;
 								//this.pause();
 						}
-
-						// let overlap = ob1.radius + ob2.radius - ob1.distance(ob2);
-						// let smallerObject = ob1.radius < ob2.radius ? ob1 : ob2;
-						// let biggerObject = ob1.radius > ob2.radius ? ob1 : ob2;
-
-						// // When things go normally, this line does not execute.
-						// // "Emergency" is when staticCollision has run, but the collision
-						// // still hasn't been resolved. Which implies that one of the objects
-						// // is likely being jammed against a corner, so we must now move the OTHER one instead.
-						// // in other words: this line basically swaps the "little guy" role, because
-						// // the actual little guy can't be moved away due to being blocked by the wall.
-						// if (emergency) [smallerObject, biggerObject] = [biggerObject, smallerObject]
-
-						// let theta = Math.atan2((biggerObject.y - smallerObject.y), (biggerObject.x - smallerObject.x));
-						// smallerObject.x -= overlap * Math.cos(theta);
-						// smallerObject.y -= overlap * Math.sin(theta);
-
-						// if (ob1.distance(ob2) < ob1.radius + ob2.radius) {
-						// 		// we don't want to be stuck in an infinite emergency.
-						// 		// so if we have already run one emergency round; just ignore the problem.
-						// 		if (!emergency) this.staticCollision(ob1, ob2, true)
-						// }
 				}
 
 				infection(ball1, ball2) {
@@ -168,7 +145,7 @@
 						ball2.setSpeed(dx2F, dy2F);
 
 						this.infection(ball1, ball2);
-						this.staticCollision(ball1, ball2)
+						this.overlapCollision(ball1, ball2)
 				}
 
 				ballCollisions() {
